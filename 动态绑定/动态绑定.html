@@ -1,0 +1,47 @@
+<!--
+author: Miyako
+本次试验了Vue的基本用法，动态绑定html页面中的元素，
+并对其中的类js语句赋值{{name}}
+此外还用到了几个指令，v-mode ：将input与{{}}绑定
+v-show ： 只有里面的值不为null时才显示这个标签的内容
+v-if： 如果里面的值为null就从demo中删除这个标签
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态绑定</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<body>
+<div class="dynamic">
+    <div>
+        <input type="text" v-model="name">
+        <span id = "name" v-show="name">{{name}}</span>
+    </div>
+    <div>
+        <input type="text" v-model="age">
+        <span id="age" v-show="age">{{age}}</span>
+    </div>
+    <div>
+        <input type="text" v-model="sex">
+        <span id="sex" v-show="sex">{{sex}}</span>
+    </div>
+</div>
+
+</body>
+<script>
+    var app = new Vue({
+//        el 只对第一个标签有作用
+//        所以多个数据只能用一个div封装起来
+        el: '.dynamic',
+        data:{
+            name: null,
+            age: null,
+            sex: null,
+        }
+    })
+</script>
+</html>

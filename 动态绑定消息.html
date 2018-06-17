@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态绑定消息</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<body>
+<div class="dynamic">
+    <input type="text" v-model="name">
+    <div>
+        v-model : binding 绑定
+        v-show : 如果这个元素存在，在显示
+        v-if : 如果没有直接从deom中删除了
+    </div>
+    <span v-show="name">{{name}}</span>
+    {{age}}
+</div>
+</body>
+<script>
+    var app = new Vue({
+        el: '.dynamic',
+        data: {
+            name: null,
+            age: 13,
+        }
+    })
+</script>
+</html>
