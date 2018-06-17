@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+<style type="text/css">
+    .original{
+        width: 300px;
+        height: 200px;
+        background-color: red;
+    }
+    .later{
+        background-color: yellow;
+    }
+</style>
+<body>
+<div class="bind">
+    <a v-bind:href="url">点我</a>
+    <br>
+    <img v-bind:src="img" width="300">
+    <div v-bind:class="dclass">nishi</div>
+</div>
+</body>
+<script>
+    var app = new Vue({
+        el: '.bind',
+        data: {
+            url: "http://www.baidu.com",
+            img: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1529231088622&di=1f8e5a89076fb8fb10083a22b44ff5f3&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201406%2F17%2F20140617222719_EP3yZ.thumb.700_0.jpeg",
+            dclass: "original"
+        }
+    })
+</script>
+</html>
