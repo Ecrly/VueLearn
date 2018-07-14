@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>component</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<style>
+    .liked{
+        background-color: red;
+    }
+</style>
+<body>
+<div class="app">
+    <alert></alert>
+    <like></like>
+</div>
+
+</body>
+<script>
+Vue.component('like', {
+    template: '<button :class="{liked: liked}" @click="dian">赞{{zan}}</button>',
+    data: function () {
+            return {
+                zan: 10,
+                liked: false,
+            }
+        },
+    methods: {
+        dian: function () {
+            if(!this.liked)
+            {
+                this.liked = !this.liked
+                this.zan ++
+            }
+            else{
+                this.liked = !this.liked
+                this.zan --
+            }
+
+        }
+    }
+})
+    var app = new Vue({
+        el: '.app',
+        components: {
+            alert: {
+                template: '<button @click="click">haha</button>',
+                methods: {
+                    click : function () {
+                        alert("heng")
+                    }
+                }
+            }
+        }
+    })
+</script>
+</html>

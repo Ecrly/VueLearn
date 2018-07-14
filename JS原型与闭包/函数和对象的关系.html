@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数和对象的关系</title>
+</head>
+<script>
+
+    function fn() {
+        this.name = 'en'
+        age = 13
+        this.getAge = function () {
+            return age
+        }
+    }
+
+    var obj = new fn()
+    console.log(obj.name)
+    console.log(obj.age)
+    console.log(obj.getAge())
+
+
+    var arry = ['123', 1, true]
+
+
+
+</script>
+<body>
+
+</body>
+</html>

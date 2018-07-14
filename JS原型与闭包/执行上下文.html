@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>执行上下文</title>
+</head>
+
+<script>
+
+    console.log(a)
+    var a = 1
+
+    console.log(f)   //undefined
+    var f = function () {
+
+    }
+
+    console.log(fn)  //function fn() {}
+    function fn() {
+
+    }
+
+    g()
+    function g(x) {
+        console.log(arguments)   //[]
+        console.log(x)          //undefined
+    }
+    
+    
+</script>
+
+<body>
+
+</body>
+</html>

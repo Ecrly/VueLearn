@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-on</title>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+<div class="vue">
+    <button v-on:click="onClick">chick</button><br>
+    <button v-on="{mouseenter: onEEnter, mouseleave: onOut}">hehe</button>
+    <form v-on:submit.prevent="onSubmit">
+        <input type="text" v-on:keyup="onKeyup">
+        <button type="submit">提交</button>
+    </form>
+</div>
+</body>
+<script>
+var app = new Vue({
+    el: '.vue',
+    methods: {
+        onClick: function () {
+            alert("heng")
+        },
+        onEEnter: function () {
+            console.log("jinlai")
+        },
+        onOut: function () {
+            console.log("jchuqu")
+        },
+        onSubmit: function (e) {
+//            alert("hehee")
+//            e.preventDefault()
+            console.log("submit")
+        },
+        onKeyup: function () {
+            console.log("keyup")
+        }
+    }
+})
+</script>
+</html>

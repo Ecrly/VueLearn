@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>指令复习</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+<body>
+<div class="vue">
+    <form action="">
+        <input type="text" v-model.number="math"><br>
+        <input type="text" v-model.number="english"><br>
+        <input type="text" v-model.number="chinese"><br>
+        <span>{{sum}}</span>
+    </form>
+</div>
+<script>
+    var app = new Vue({
+        el: '.vue',
+        data:{
+            math: 100,
+            english: 98,
+            chinese: 60,
+        },
+        computed: {
+            sum : function () {
+                return this.math + this.english + this.chinese
+            }
+        },
+        methods: {
+            com: function () {
+                return this.math + this.english + this.chinese
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+</head>
+
+<script>
+
+    function fn() {
+        var max = 10
+        return function bar(x) {
+            if(x > max){
+                console.log(x);   //15
+            }
+        }
+    }
+
+    var f1 = fn()
+    f1(15)
+
+</script>
+
+<body>
+
+</body>
+</html>

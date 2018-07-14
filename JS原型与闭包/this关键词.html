@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this关键词</title>
+</head>
+<script>
+
+    function fn() {
+        this.a = 1
+        this.b = 2
+        console.log(this)
+    }
+
+    fn()
+
+    var obj = {
+        x: 10,
+        fn: function () {
+            console.log(this)    //Object {x: 10}
+            console.log(this.x)   //10
+        }
+    }
+
+    obj.fn()
+
+
+    var test = function () {
+
+    }
+
+    test.prototype.f = obj.fn
+    test.prototype.f()
+    var t = new test()
+    t.f()
+
+
+//    var x  = 10
+    var fn = function () {
+        console.log(this)      //windows
+        console.log(this.x)    //10
+    }
+    fn()
+
+    var obj = {
+        x: 10,
+        fn: function () {
+            function f() {
+                console.log(this)      //windows
+                console.log(this.x)    //10
+            }
+            f()
+        }
+    }
+    obj.fn()
+
+
+</script>
+<body>
+
+</body>
+</html>

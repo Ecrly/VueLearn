@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<body>
+<div class="vue">
+
+    <blog-cell v-for="post in posts" v-bind:data="post"></blog-cell>
+
+
+</div>
+</body>
+<script>
+
+    Vue.component('blog-cell', {
+        props: ['data'],
+        data: function () {
+            return{
+                fontsize: 30
+            }
+        },
+        template: "<div>" +
+                    "<div>第{{data.id}}篇</div>" +
+                    "<div>{{fontsize}}</div>" +
+                    "<h3>{{data.title}}</h3>" +
+                    "<div>{{data.content}}</div>" +
+                    "<button v-on:click='detail'></button>" +
+                    "<br>" +
+                   "</div>",
+        methods: {
+            detail: function () {
+                alert(this.data.id)
+                this.fontsize ++
+            }
+        }
+    })
+
+    var app = new Vue({
+        el: '.vue',
+        data: {
+            posts: [
+                { id: 1, title: 'My journey with Vue', content: 'Download the Vue Devtools extension for a better development experience:\n' +
+                'https://github.com/vuejs/vue-devtools' },
+                { id: 2, title: 'Blogging with Vue' , content: 'You are running Vue in development mode.\n' +
+                'Make sure to turn on production mode when deploying for production.\n' +
+                'See more tips at https://vuejs.org/guide/deployment.html'},
+                { id: 3, title: 'Why Vue is so fun', content: 'component lists rendered with v-for should have explicit keys. See https://vuejs.\n' +
+                'org/guide/list.html#key for more info.\n' }
+            ]
+        }
+    })
+</script>
+
+</html>

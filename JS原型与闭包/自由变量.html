@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自由变量</title>
+</head>
+<script>
+
+    var x = 10
+    function fn() {
+        var b = 20
+        console.log(x + b)  //30
+    }
+
+    function f(g) {
+        var x = 20
+        g()
+    }
+
+    f(fn)
+
+</script>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包3</title>
+</head>
+
+<script>
+
+    var height = 100
+    function a() {
+        var age = 21
+        var height = 128
+        var weight = 70
+        this.b = function() {
+            console.log(age)    //25
+            console.log(height)  //128
+            var age = 25
+            console.log(age)   //25
+            height = 180
+            console.log(height)  //180
+            console.log(this.weight)  //undefined
+        }
+    }
+    var aa = new a()
+    aa.b()
+
+</script>
+
+<body>
+
+</body>
+</html>

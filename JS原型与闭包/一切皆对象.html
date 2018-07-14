@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一切皆对象</title>
+</head>
+
+<script>
+
+    console.log(typeof a)
+    console.log(typeof 1)
+    console.log(typeof ['a', 'b'])
+    console.log(typeof {'a': 1, 'b': 2})
+    console.log(typeof function () {
+        alert("en")
+    })
+    console.log(typeof 'nihao')
+
+    function f() {
+        alert("i am object")
+    }
+    console.log(f instanceof Object) //true
+
+    var obj = {
+        name: 'haha',
+        age: 10,
+        getName: function () {
+            return name
+        },
+        setAge: function (age) {
+            this.age = age
+        }
+    }
+
+    obj.setAge(20)
+    console.log(obj.age)
+
+    var fn = function () {
+        alert('lala')
+    }
+    fn.age = 34
+    fn.getAge = function () {
+        return this.age
+    }
+    console.log(fn.age)
+    console.log(fn.getAge())
+
+
+    var fn = function () {
+        alert('en')
+    }
+    fun()
+    function fun() {
+        alert('fun')
+    }
+
+</script>
+
+<body>
+
+</body>
+</html>

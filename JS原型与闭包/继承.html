@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承</title>
+</head>
+<script>
+
+    function fn() {
+
+    }
+    var f = new fn()
+    f.a = 10
+
+    fn.prototype.b = 20
+
+    var itme
+    for(itme in f){
+        console.log(itme)    //a
+    }                         //b
+
+    var g = new fn()
+    for(itme in g){
+        console.log(itme)    //b
+    }
+
+</script>
+<body>
+
+</body>
+</html>

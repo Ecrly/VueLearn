@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prototype</title>
+</head>
+<script>
+
+    function fn() {
+
+    }
+    console.log(fn.prototype)
+    fn.prototype.name = 'nihao'
+    fn.prototype.getAge = function () {
+        return 18
+    }
+
+    var f = new fn()
+    console.log(f.name)      //nihao
+    console.log(f.getAge())    //18
+    console.log(fn.name)
+
+
+</script>
+<body>
+
+</body>
+</html>

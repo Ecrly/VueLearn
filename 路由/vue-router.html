@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-router</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/vue-router/3.0.1/vue-router.js"></script>
+<body>
+<div class="app">
+    <router-link to="/">main</router-link>
+    <router-link to="/about">about me</router-link>
+    <div>
+        <router-view></router-view>
+    </div>
+</div>
+
+</body>
+<script>
+    var routers = [
+        {
+            path:'/about',
+            component: {
+                template: '<div>about me</div>'
+            }
+        },
+        {
+            path:'/',
+            component: {
+                template: '<div>main page</div>'
+            }
+        }
+    ]
+    var router = new VueRouter ({
+        routers: routers
+    })
+
+    var app = new Vue({
+        el: '.app',
+        router: router,
+    })
+</script>
+</html>

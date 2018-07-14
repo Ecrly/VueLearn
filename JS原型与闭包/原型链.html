@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型链</title>
+</head>
+<script>
+
+    function fn() {
+
+    }
+
+    var f = new fn()
+
+    console.log(f instanceof fn)    //true
+    console.log(f instanceof Object)    //true
+
+    console.log(fn instanceof Function)    //true
+    console.log(fn instanceof Object)    //true
+
+
+    console.log(Object instanceof Object)    //true
+    console.log(Function instanceof Object)    //true
+    console.log(Object instanceof Function)    //true
+    console.log(Function instanceof Function)    //true
+
+
+</script>
+<body>
+
+</body>
+</html>

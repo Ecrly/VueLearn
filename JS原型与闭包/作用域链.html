@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域链</title>
+</head>
+
+<script>
+
+    var a = 10
+    function fn() {
+         var b = 20
+
+        function bar() {
+            console.log(a + b)
+        }
+
+        return bar
+    }
+
+    var x = fn(),
+        b = 200
+
+    x()
+
+</script>
+
+<body>
+
+</body>
+</html>

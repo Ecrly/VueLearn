@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>let var this 区别</title>
+</head>
+<script>
+    function fn() {
+        var aa = 1;
+        this.cc = 3;
+        this.getAa = function () {
+            return aa
+        }
+    }
+
+    var obj = new fn()
+    console.log(obj.aa)  //undefined
+    console.log(obj.cc)  //3
+    console.log(obj.getAa()) //1
+
+
+
+</script>
+<body>
+
+</body>
+</html>
